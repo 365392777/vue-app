@@ -16,7 +16,26 @@ Vue.use(ElementUI)
 Vue.config.productionTip = false
 // 2.把axios绑定到vue实例的属性$axios
 Vue.prototype.$axios = axios
+axios.defaults.withCredentials = true // 想要跨域带上cookies，在全局上添加withCredentials: true
 
+// 设置基准路径
+axios.defaults.baseURL = 'http://localhost:8899' // 添加请求默认路径
+// 设置导航守卫
+router.beforeEach((to, from, next) => {
+  if (to.path === '/login') {
+    next()
+  }
+  if (to.path === '/login' && localStorage.getItem('realname')) {
+    next('/admin')
+    console.log('你已经登录过,为你跳转到admin')
+  }
+  if (!localStorage.getItem('uname')) {
+    next('/login')
+  } else {
+    next()
+  }
+  next()
+})
 new Vue({
   router,
   store,

@@ -1,6 +1,7 @@
 <template>
-  <div class="bgiBox">
-       <el-card class="box-card">
+  <div class="login">
+     <div class="bgi"></div>
+       <el-card class="box-card cards ">
             <div slot="header" class="clearfix">
               <span>后台登录页</span>
             </div>
@@ -17,7 +18,7 @@
                 </el-form-item>
             </el-form>
       </el-card>
-    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -61,10 +62,21 @@ export default {
         if (valid) {
           this.$axios({
             method: 'post',
-            url: 'http://localhost:8899/admin/account/login',
+            url: 'admin/account/login',
             data: this.ruleForm
           }).then(res => {
             console.log(res)
+            const { message, status } = res.data
+            if (status === 0) {
+              localStorage.setItem('uname', message.uname)
+              localStorage.setItem('realname', message.realname)
+              this.$router.push('/admin')
+            } else {
+              this.$message({
+                message: '请求数据失败404',
+                type: 'warning'
+              })
+            }
           })
           this.$message({
             message: '恭喜你登录成功',
@@ -85,7 +97,26 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="less">
+.login{
+   height: 100%;
+   position: relative;
+   .bgi{
+     position: absolute;
+     background: url(../assets/bgi.jpg) center no-repeat;
+     background-size: cover;
+     height: 100%;
+    width: 100%;
+    filter: blur(3px);
+    transform: scale(1.01);
+  }
+  .cards{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-5%)
+  }
+}
 .bgiBox{
   width: 500px;
   height: 350px;
