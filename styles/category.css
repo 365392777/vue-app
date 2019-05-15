@@ -1,0 +1,57 @@
+.content {
+  display: flex;
+}
+.left {
+  overflow: hidden;
+  width: 100px;
+  background-color: #ccc;
+}
+.left ul {
+  width: 100%;
+}
+.left ul li {
+  width: 100%;
+}
+.left ul li a {
+  display: block;
+  height: 50px;
+  border: 1px solid #333;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+.left ul li.active > a {
+  background-color: #fff;
+  border-right: none;
+  color: red;
+}
+.right {
+  flex: 1;
+  background-color: #fff;
+  overflow: hidden;
+}
+.right .cate-nav .cate-title {
+  color: #333;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.right .cate-nav .cate-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.right .cate-nav .cate-content a:nth-last-of-type(1) {
+  margin-bottom: 20px;
+}
+.right .cate-nav .cate-content a {
+  display: block;
+  width: 33.33%;
+  text-align: center;
+  color: #333;
+  font-size: 13px;
+}
+.right .cate-nav .cate-content a img {
+  margin: 0 auto;
+  display: block;
+  width: 70%;
+}

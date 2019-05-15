@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04分类副本</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../lib/mui/css/muie.css">
+    <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../lib/mui/css/mui.css">
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href='../styles/category.css'>
+</head>
+
+<body>
+    <div class="layoyt">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="mui-input-row mui-search">
+                <input type="search" class="mui-input-clear" placeholder="">
+            </div>
+        </div>
+        <!-- 正中间部分 -->
+        <div class="content">
+            <div class="left">
+                <ul>
+                    <!-- <li class="active">
+                        <a href="#">大家电</a>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="right">
+                <div class="rightList">
+                    <!-- 外层 -->
+                    <!-- <div class="cate-nav">
+                        <div class="cate-title">电视</div>
+                      
+                        <div class="cate-content">
+                            <a href="JavaScript:;" data-id="">
+                                <img src="http://157.122.54.189:9094/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"
+                                    alt="">
+                                <div>曲面电视</div>
+                            </a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div class="footer">
+            <nav class="mui-bar mui-bar-tab">
+                <a class="mui-tab-item " href="../index.html">
+                    <span class="mui-icon mui-icon-home"></span>
+                    <span class="mui-tab-label">首页</span>
+                </a>
+                <a class="mui-tab-item mui-active" href="../views/category.html">
+                    <span class="mui-icon mui-icon-list"></span>
+                    <span class="mui-tab-label">分类</span>
+                </a>
+                <a class="mui-tab-item" href="../views/cart.html">
+                    <span class="mui-icon-extra mui-icon-extra-cart shoppingICON"></span>
+                    <span class="mui-tab-label shopping ">购物车</span>
+                </a>
+                <a class="mui-tab-item" href="../views/myContent.html">
+                    <span class="mui-icon mui-icon-contact"></span>
+                    <span class="mui-tab-label">我的</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- 左边数据渲染 -->
+    <script type="text/template" id="leftTemp">
+        {{each list value index}}
+       <li class="{{index==0?'active':''}}">
+           <a href="#">{{value.cat_name}}</a>
+      </li>
+      {{/each}}
+    </script>
+
+    <!-- 右边数据渲染 -->
+    <script type="text/template" id="rightTemp">
+    {{each children value index}}
+   <div class="cate-nav">
+        <div class="cate-title">{{value.cat_name}}</div>
+        <div class="cate-content">
+                {{each value.children v i}}
+            <a href="goodsList.html?cid={{v.cat_id}}">
+                <img src="http://157.122.54.189:9094{{v.cat_icon}}"
+                    alt="">
+                <div>{{v.cat_name}}</div>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+    {{/each}}
+</script>
+
+    <script src="../lib/mui/js/mui.min.js"></script>
+    <script src="../lib/arttemplate/template-web.js"></script>
+    <script src="../lib/iscroll/iscroll.js"></script>
+    <script src="../lib/zepto/zepto.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/category.js"></script>
+</body>
+
+</html>

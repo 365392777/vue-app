@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>订单信息11</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../lib/mui/css/muie.css">
+    <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../lib/mui/css/mui.css">
+    <link rel="stylesheet" href="../styles/common.css">
+</head>
+
+<body>
+    <div class="layoyt">
+        <!-- 中间侧滑部分 包含头部 -->
+        <header id="header" class="mui-bar mui-bar-nav">
+            <h1 class="mui-title">订单列表</h1>
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        </header>
+        <div class="content">
+            <div class="mui-scroll-wrapper" style="padding-top:45px;padding-bottom:45px">
+                <div class="mui-scroll">
+                    <!--选项卡-->
+                    <div class="mui-content">
+                        <div style="padding: 10px 10px;">
+                            <div id="segmentedControl"
+                                class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+                                <a class="mui-control-item mui-active" href="#item1">
+                                    全部
+                                </a>
+                                <a class="mui-control-item" href="#item2">
+                                    待付款
+                                </a>
+                                <a class="mui-control-item " href="#item3">
+                                    待发货
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="item1" class="mui-control-content mui-active">
+                                <ul class="mui-table-view allOrderList">
+
+                                </ul>
+                            </div>
+                            <div id="item2" class="mui-control-content">
+
+                            </div>
+                            <div id="item3" class="mui-control-content">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="footer">
+            <nav class="mui-bar mui-bar-tab">
+                <a class="mui-tab-item " href="../index.html">
+                    <span class="mui-icon mui-icon-home"></span>
+                    <span class="mui-tab-label">首页</span>
+                </a>
+                <a class="mui-tab-item " href="../views/category.html">
+                    <span class="mui-icon mui-icon-list"></span>
+                    <span class="mui-tab-label">分类</span>
+                </a>
+                <a class="mui-tab-item mui-active" href="../views/cart.html">
+                    <span class="mui-icon-extra mui-icon-extra-cart shoppingICON"></span>
+                    <span class="mui-tab-label shopping ">购物车</span>
+                </a>
+                <a class="mui-tab-item" href="../views/myContent.html">
+                    <span class="mui-icon mui-icon-contact"></span>
+                    <span class="mui-tab-label">我的</span>
+                </a>
+            </nav>
+        </a>
+    </div>
+
+    <!-- 订单数据渲染 -->
+    <script type="text/template" id="orderLisTemp">
+        {{each data value index}}
+        <li class="mui-table-view-cell">
+                <div class="mui-row">
+                    <div class="mui-col-xs-9">
+                        <div class="order">订单编号</div>
+                        <div class="order_number">{{value.order_number}}</div>
+                    </div>  
+                    <div class="mui-col-xs-3 order_price">￥{{value.order_price}}</div>
+                </div>
+         </li>
+    {{/each}}
+    </script>
+
+    <script src="../lib/mui/js/mui.min.js"></script>
+    <script src="../lib/arttemplate/template-web.js"></script>
+    <script src="../lib/iscroll/iscroll.js"></script>
+    <script src="../lib/zepto/zepto.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/orderList.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>29-品优购</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./lib/mui/css/muie.css">
+    <link rel="stylesheet" href="./lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+
+    <div class="layoyt">
+        <div class="header">
+            <div class="mui-input-row mui-search">
+                <input type="search" class="mui-input-clear" placeholder="1">
+            </div>
+        </div>
+        <div class="content">
+            <div class="banner">
+                <div class="mui-slider">
+                    <div class="mui-slider-group mui-slider-loop">
+                        <!-- 数据渲染 -->
+                    </div>
+                    <div class="mui-slider-indicator">
+                        <!-- 小圆点 -->
+                    </div>
+                </div>
+            </div>
+            <div class="nav">
+                <!-- pyg_nav导航栏 -->
+                <a href="">
+                    <img src="https://image2.suning.cn/uimg/cms/img/155411189774023862.gif?format=_is_120w_120h" alt="">
+                    <div>爆款手机</div>
+                </a>
+                <a href="">
+                    <img src="https://image1.suning.cn/uimg/cms/img/154708800857670247.png?format=_is_120w_120h.webp"
+                        alt="">
+                    <div>苏宁超市</div>
+                </a>
+                <a href="">
+                    <img src="https://image1.suning.cn/uimg/cms/img/155175138228120594.png?format=_is_120w_120h.webp"
+                        alt="">
+                    <div>生活超市</div>
+                </a>
+                <a href="">
+                    <img src="https://image2.suning.cn/uimg/cms/img/154708804944582613.png?format=_is_120w_120h.webp"
+                        alt="">
+                    <div>苏宁生鲜</div>
+                </a>
+            </div>
+            <div class="commodityAll">
+                <!-- <div class="commoditylist">
+                    <img src="./static/images/goods_cate1.png" alt="">
+                    <div class="commodity">
+                        <a href="#" class="p1">
+                            <img src=" http://image5.suning.cn/uimg/b2c/newcatentries/0070176984-000000010094520649_2_400x400.jpg"
+                                alt="">
+                            <div class="mui-ellipsis-2 fonts1">DCM 日韩版时尚耳圈街头个性钛钢耳环潮人耳扣单只男女情侣耳饰
+                            </div>
+                            <div class="font">￥281</div>
+                            <a type="button" class="mui-btn mui-btn-primary mui-btn-outlined btn">蓝色</a>
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="footer">
+            <nav class="mui-bar mui-bar-tab">
+                <a class="mui-tab-item mui-active" href="./index.html">
+                    <span class="mui-icon mui-icon-home"></span>
+                    <span class="mui-tab-label">首页</span>
+                </a>
+                <a class="mui-tab-item" href="./views/category.html">
+                    <span class="mui-icon mui-icon-list"></span>
+                    <span class="mui-tab-label">分类</span>
+                </a>
+                <a class="mui-tab-item carthtml" href="./views/cart.html">
+                    <span class="mui-icon-extra mui-icon-extra-cart shoppingICON"></span>
+                    <span class="mui-tab-label shopping ">购物车</span>
+                </a>
+                <a class="mui-tab-item" href="./views/myContent.html">
+                    <span class="mui-icon mui-icon-contact"></span>
+                    <span class="mui-tab-label">我的</span>
+                </a>
+            </nav>
+        </a>
+    </div>
+
+    <!-- 轮播图 -->
+    <script type="text/template" id="bannerTemp">
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="{{data[data.length-1].navigator_url}}">
+          <img src="{{data[data.length-1].image_src}}" /></a></div>
+          {{each data value index}}
+      <div class="mui-slider-item"><a href="{{value.navigator_url}}"><img src="{{value.image_src}}" /></a></div>
+          {{/each}}
+      <div class="mui-slider-item mui-slider-item-duplicate"><a href="{{data[0].navigator_url}}">
+          <img src="{{data[0].image_src}}" /></a></div>
+</script>
+
+    <!-- 小圆点 -->
+    <script type="text/template" id="dotTemp">
+        {{each data value index}}
+     <div class="mui-indicator {{index==0?'mui-active':''}}"></div>
+     {{/each}}
+</script>
+    <!-- 商品列表 -->
+    <script type="text/template" id="commodityTemp">
+    {{each data value index}}
+        <div class="commoditylist">
+            <img  class="img1" src="{{value.group_img}}"alt=>
+            {{each value.goods v i}}
+            <div class="commodity">
+                <a href="#" class="p1">
+                    <img  class="img2" src="{{v.goods_small_logo}}"
+                        alt="">
+                    <div class="mui-ellipsis-2 fonts1">{{v.goods_name}}</div>
+                    <div class="font">￥{{v.goods_price}}</div>
+                    <a type="button" class="mui-btn mui-btn-primary mui-btn-outlined btn">找相似</a>
+                </a>
+            </div>
+            {{/each}}
+        </div> 
+        {{/each}}
+</script>
+
+
+
+
+    <script src="./lib/arttemplate/template-web.js"></script>
+    <script src="./lib/iscroll/iscroll.js"></script>
+    <script src="./lib/zepto/zepto.js"></script>
+    <script src="./lib/mui/js/mui.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

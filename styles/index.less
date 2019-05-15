@@ -1,0 +1,95 @@
+.layoyt{
+    width: 100vw;
+    height: 100vh;
+    max-width: 640px;
+    min-width: 320px;
+    // background-color: skyblue;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    width: 100%;
+    height: 45px;
+    padding: 5px 0px;
+    // background-color: #ccc;
+}
+.content{
+    overflow: scroll;
+    flex:1;
+    // background-color: yellow;
+}
+.nav{
+   display: flex;
+   padding: 8px 0px;
+   background-color: #fff;
+   a{
+       flex: 1;
+       >img{
+           display: block;
+           width: 50%;
+           margin: 0 auto;
+       }
+       div{
+           text-align: center;
+           font-size: 14px;
+           color: #000;
+           margin-top: 5px;
+       }
+   }
+}
+.commodityAll{
+    // overflow: hidden;
+}
+    .commoditylist{
+        overflow: hidden;
+        >.img1{
+            display: block;
+            width: 100%;
+            margin: 5px 0px;
+        }
+    }
+  
+    .commodity{
+        background-color: #fff;
+        float: left;
+        width: 49%;
+        margin-bottom: 5px;
+        .btn{
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .font{
+            color: red;
+            font-size: 14px;
+        }
+        .fonts1{
+            color: #000;
+            font-size: 14px; 
+        }
+        .p1{
+            display: block;
+            width: 100%;
+            .img2{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    .commodity:nth-of-type(even){
+        margin-left: 2%;
+    }
+
+.footer{
+    width: 100%;
+    height: 45px;
+    // background-color: #ccc;
+    .shoppingICON{
+        display: block;
+        margin: 0 auto;
+    }
+    .shopping{
+        font-size: 12px;
+    }
+}

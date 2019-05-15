@@ -1,0 +1,86 @@
+.layoyt {
+  width: 100vw;
+  height: 100vh;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  width: 100%;
+  height: 45px;
+  padding: 5px 0px;
+}
+.content {
+  overflow: scroll;
+  flex: 1;
+}
+.nav {
+  display: flex;
+  padding: 8px 0px;
+  background-color: #fff;
+}
+.nav a {
+  flex: 1;
+}
+.nav a > img {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
+.nav a div {
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+  margin-top: 5px;
+}
+.commoditylist {
+  overflow: hidden;
+}
+.commoditylist > .img1 {
+  display: block;
+  width: 100%;
+  margin: 5px 0px;
+}
+.commodity {
+  background-color: #fff;
+  float: left;
+  width: 49%;
+  margin-bottom: 5px;
+}
+.commodity .btn {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+.commodity .font {
+  color: red;
+  font-size: 14px;
+}
+.commodity .fonts1 {
+  color: #000;
+  font-size: 14px;
+}
+.commodity .p1 {
+  display: block;
+  width: 100%;
+}
+.commodity .p1 .img2 {
+  display: block;
+  width: 100%;
+}
+.commodity:nth-of-type(even) {
+  margin-left: 2%;
+}
+.footer {
+  width: 100%;
+  height: 45px;
+}
+.footer .shoppingICON {
+  display: block;
+  margin: 0 auto;
+}
+.footer .shopping {
+  font-size: 12px;
+}

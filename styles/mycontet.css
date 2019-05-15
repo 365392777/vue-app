@@ -1,0 +1,76 @@
+.content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.content #drop_out {
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.content .my_page {
+  margin-top: 50px;
+}
+.content .my_page .user {
+  background-color: #fff;
+  display: flex;
+  padding: 8px;
+}
+.content .my_page .user .mui-icon {
+  font-size: 45px;
+  flex: 1;
+  text-align: center;
+}
+.content .my_page .user .user_account {
+  flex: 3;
+}
+.content .my_page .user .user_account .account {
+  color: #000;
+  margin-bottom: 5px;
+}
+.content .my_page .user .user_account .account_email {
+  color: #aaa;
+  font-size: 14px;
+}
+.content .my_page .my_order {
+  margin-top: 10px;
+  background-color: #fff;
+}
+.content .my_page .my_order .order_management {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.content .my_page .my_order .order_serve {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  color: #007aff;
+}
+.content .my_page .my_order .order_serve .fa {
+  display: block;
+  text-align: center;
+  font-size: 30px;
+}
+.content .my_page .my_order .order_serve p {
+  color: #007aff;
+  margin: 0px;
+}
+.content .my_page .modification {
+  margin-top: 10px;
+}
+.content .my_page .modification ul {
+  margin-top: 10px;
+  background-color: #fff;
+  padding-left: 10px;
+}
+.content .my_page .modification ul > li {
+  height: 48px;
+  line-height: 48px;
+  border-bottom: 1px solid #aaa;
+}
+.content .my_page .modification ul > li span:nth-of-type(2) {
+  float: right;
+  padding-right: 20px;
+  color: #aaa;
+  line-height: 48px;
+}

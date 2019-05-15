@@ -1,0 +1,62 @@
+.content {
+  margin-top: 45px;
+  position: relative;
+}
+.content .goodsName {
+  padding: 5px;
+  color: #333;
+}
+.content .goodsPrice {
+  color: orange;
+  margin-top: 10px;
+  padding-left: 5px;
+}
+.content .goodsDesc li {
+  border-bottom: 1px solid #aaa;
+  line-height: 45px;
+  display: flex;
+  height: 45px;
+  padding-left: 5px;
+}
+.content .goodsDesc li > span:nth-of-type(1) {
+  font-size: 14px;
+  color: #aaa;
+  flex: 1;
+}
+.content .goodsDesc li > span:nth-of-type(2) {
+  font-size: 14px;
+  color: #333;
+  flex: 4;
+}
+.content #item2 div:nth-last-of-type(1) {
+  margin-bottom: 15px;
+}
+.content #item2 div {
+  padding: 0px 5px 0px;
+}
+.content #item2 div h4 {
+  border-bottom: 1px solid #333;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  color: #333;
+}
+.content #item2 div span {
+  font-size: 14px;
+  color: #333;
+  padding-right: 20px;
+}
+.footer a {
+  border-right: 1px solid #aaa;
+  padding: 0;
+  margin: 0;
+}
+.footer a:nth-last-of-type(1) {
+  border-right: none;
+}
+.footer .mui-btn {
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: 15px;
+}

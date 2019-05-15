@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录页</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../lib/mui/css/muie.css">
+    <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../lib/mui/css/mui.css">
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href='../styles/category.css'>
+    <link rel="stylesheet" href="../styles/goodsList.css">
+</head>
+
+<body>
+    <div class="layoyt">
+        <!-- 中间侧滑部分 包含头部 -->
+        <header id="header" class="mui-bar mui-bar-nav">
+            <h1 class="mui-title">登录</h1>
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        </header>
+        <div class="content">
+            <!-- 使用mui插件 -->
+            <form class="mui-input-group content_form" style="margin-top:50px; width:100%">
+                <div class="mui-input-row">
+                    <label>用户名</label>
+                    <input type="text" class="mui-input-clear username" placeholder="请输入用户名" value="13112345678">
+                </div>
+                <div class="mui-input-row">
+                    <label>密码</label>
+                    <input type="password" class="mui-input-password password" placeholder="请输入密码" value="123456">
+                </div>
+                <div class="mui-button-row">
+                    <button type="button" class="mui-btn mui-btn-primary MY_content_last">登录</button>
+                    <button type="button" class="mui-btn mui-btn-danger MY_content_register">注册</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- 底部 -->
+        <div class="footer">
+            <nav class="mui-bar mui-bar-tab">
+                <a class="mui-tab-item " href="../index.html">
+                    <span class="mui-icon mui-icon-home"></span>
+                    <span class="mui-tab-label">首页</span>
+                </a>
+                <a class="mui-tab-item " href="../views/category.html">
+                    <span class="mui-icon mui-icon-list"></span>
+                    <span class="mui-tab-label">分类</span>
+                </a>
+                <a class="mui-tab-item mui-active" href="../views/cart.html">
+                    <span class="mui-icon-extra mui-icon-extra-cart shoppingICON"></span>
+                    <span class="mui-tab-label shopping ">购物车</span>
+                </a>
+                <a class="mui-tab-item" href="#">
+                    <span class="mui-icon mui-icon-contact"></span>
+                    <span class="mui-tab-label">我的</span>
+                </a>
+            </nav>
+        </a>
+    </div>
+    <script src="../lib/mui/js/mui.min.js"></script>
+    <script src="../lib/arttemplate/template-web.js"></script>
+    <script src="../lib/iscroll/iscroll.js"></script>
+    <script src="../lib/zepto/zepto.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/goodsList.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

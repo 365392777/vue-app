@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物11车</title>
+    <link rel="stylesheet" href="../styles/reset.css"><!-- 重置文件 -->
+    <link rel="stylesheet" href="../lib/mui/css/muie.css"><!-- mui扩展字体 -->
+    <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.css"><!-- 字体图标 -->
+    <link rel="stylesheet" href="../lib/mui/css/mui.css"><!-- mui插件 -->
+    <link rel="stylesheet" href="../lib/mui/css/mui.picker.css"><!-- mui地址三级联动 -->
+    <link rel="stylesheet" href="../lib/mui/css/mui.poppicker.css"><!-- mui地址三级联动 -->
+    <link rel="stylesheet" href="../styles/common.css"><!-- 公用css部分 -->
+    <link rel="stylesheet" href="../styles/cart.css"><!-- 购物车 -->
+</head>
+
+<body class="eleToggle">
+    <div class="layoyt">
+        <!-- 中间侧滑部分 包含头部 -->
+        <header id="header" class="mui-bar mui-bar-nav">
+            <h1 class="mui-title">购物车</h1>
+            <button class="mui-btn mui-btn-primary  mui-btn-nav mui-pull-left btn-del">
+                删除</button>
+            <button class=".mui-btn mui-btn-primary  mui-pull-right btn-edit">编辑</button>
+        </header>
+        <div class="content">
+            <!-- 侧滑导航根容器 -->
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <div class="cart_content">
+                        <div class="address">
+                            <div class="address_font">配送地址</div>
+                            <div class="address_content">
+                                <div class="mui-icon mui-icon-location"></div>
+                                <div class="address_delivery">
+                                    <span>默认地址</span>
+                                    <p class="userAddress">广州传智播客</p>
+                                </div>
+                                <div class="selectAddress">配送地址</div>
+                            </div>
+                        </div>
+                        <div class="cart_pirce">
+                            <div class="cart_font">总价</div>
+                            <div class="cart_con">
+                                <div class="cart_delivery">
+                                    <span>总价</span>
+                                    <span class="price">￥ 1800.88</span>
+                                    <a href="#" class="pyg_createOrder">生成订单</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order_conntent">
+                            <div class="order-font">订单</div>
+                            <div class="order_list">
+                                <!-- <div class="order-singer">
+                                    <div class="mui-input-row mui-checkbox mui-left check">
+                                        <label></label>
+                                        <input name="checkbox" value="Item 2" type="checkbox" checked="">
+                                    </div>
+                                    <div class="orderimg">
+                                        <img src="../static/images/slide_01_640x340.jpg" alt="">
+                                    </div>
+                                    <div class="order_detail">
+                                        <div class="mui-ellipsis-2">喜尚喜
+                                            皮革汽车坐垫四季通用吉利博越GL博瑞GC9新帝豪EC8皇冠致炫510宝骏560专用夏季新款四季通用冰丝汽车座套</div>
+                                        <div class="mui-numbox" data-numbox-min="1" data-numbox-max="100">
+                                            <button class="mui-btn mui-btn-numbox-minus" type="button"
+                                                disabled="">-</button>
+                                            <input id="test" class="mui-input-numbox" type="number" value="1">
+                                            <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                                        </div>
+                                        <div class="order_price">￥268.00</div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div class="footer">
+            <nav class="mui-bar mui-bar-tab">
+                <a class="mui-tab-item " href="../index.html">
+                    <span class="mui-icon mui-icon-home"></span>
+                    <span class="mui-tab-label">首页</span>
+                </a>
+                <a class="mui-tab-item " href="../views/category.html">
+                    <span class="mui-icon mui-icon-list"></span>
+                    <span class="mui-tab-label">分类</span>
+                </a>
+                <a class="mui-tab-item mui-active" href="../views/cart.html">
+                    <span class="mui-icon-extra mui-icon-extra-cart shoppingICON"></span>
+                    <span class="mui-tab-label shopping ">购物车</span>
+                </a>
+                <a class="mui-tab-item" href="../views/myContent.html">
+                    <span class="mui-icon mui-icon-contact"></span>
+                    <span class="mui-tab-label">我的</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+    <!-- order商品列表数据 -->
+    <script type="text/template" id='orderTemp'>
+    {{each list value index}}
+    <!-- 考虑后期的编辑和删除需要获取的参数是商品的所有数据,而不仅仅是价格和数量,我们就考虑将当前商品的所有数据都存储到父级的自定义属性中data-order='{{value}} -->
+        <div class="order-singer" data-order='{{value}}'>
+                <div class="mui-input-row mui-checkbox mui-left check">
+                    <label></label>
+                    <input name="checkbox" value="Item 2" type="checkbox" checked="">
+                </div>
+                <div class="orderimg">
+                    <img src="{{value.goods_small_logo}}" alt="">
+                </div>
+                <div class="order_detail">
+                    <div class="mui-ellipsis-2">{{value.goods_name}}</div>
+                    <div class="mui-numbox pyg_userNum" data-numbox-min="1" data-numbox-max="{{value.goods_number}}">
+                        <button class="mui-btn mui-btn-numbox-minus " type="button"
+                            disabled="">-</button>
+                        <input id="test" class="mui-input-numbox" type="number" value="{{value.amount}}">
+                        <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                    </div>
+                    <div class="order_price">￥{{value.goods_price}}</div>
+                </div>
+            </div>
+            {{/each}}
+</script>
+
+    <script src="../lib/mui/js/mui.min.js"></script><!-- mui 插件-->
+    <script src="../lib/mui/js/mui.picker.js"></script><!-- mui三级联动 -->
+    <script src="../lib/mui/js/mui.poppicker.js"></script><!-- mui三级联动 -->
+    <script src="../lib/arttemplate/template-web.js"></script><!-- template模板渲染 -->
+    <script src="../lib/iscroll/iscroll.js"></script><!-- 滚动插件 -->
+    <script src="../lib/zepto/zepto.js"></script><!-- zepto第三方jq -->
+    <script src="../js/common.js"></script><!-- 公用js代码 -->
+    <script src="../data/citys.js"></script><!-- 地址三级联动 data文件夹中 -->
+    <script src="../js/cart.js"></script><!-- 购物车 -->
+</body>
+
+</html>

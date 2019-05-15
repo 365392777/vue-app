@@ -1,0 +1,102 @@
+#header .mui-btn {
+  background-color: transparent;
+  color: #007aff;
+  margin-bottom: 2px;
+}
+#header .mui-pull-right {
+  background-color: transparent;
+  color: #007aff;
+  margin-top: 6px;
+}
+.content {
+  position: relative;
+}
+.content .cart_content {
+  margin-top: 40px;
+  padding: 10px;
+}
+.content .cart_content .address_font {
+  color: #aaa;
+  font-size: 14px;
+}
+.content .cart_content .address_content {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.content .cart_content .address_content .mui-icon {
+  flex: 1;
+  text-align: center;
+}
+.content .cart_content .address_content .address_delivery {
+  flex: 4;
+  margin-top: 10px;
+}
+.content .cart_content .address_content .address_delivery p {
+  padding: 0;
+  margin: 0;
+}
+.content .cart_content .cart_pirce {
+  margin-top: 5px;
+}
+.content .cart_content .cart_pirce .cart_font {
+  color: #aaa;
+  font-size: 14px;
+}
+.content .cart_content .cart_pirce .cart_delivery {
+  padding: 10px;
+  background-color: #fff;
+}
+.content .cart_content .cart_pirce .cart_delivery span:nth-of-type(1) {
+  color: #333;
+}
+.content .cart_content .cart_pirce .cart_delivery span:nth-of-type(2) {
+  color: red;
+}
+.content .cart_content .cart_pirce .cart_delivery a {
+  float: right;
+  text-align: right;
+  color: #007aff;
+}
+.content .cart_content .order_conntent .order-font {
+  margin-top: 5px;
+  color: #333;
+  font-size: 14px;
+}
+.content .cart_content .order_conntent .order-singer {
+  display: flex;
+  margin-bottom: 5px;
+}
+.content .cart_content .order_conntent .order-singer .check {
+  flex: 2;
+}
+.content .cart_content .order_conntent .order-singer .orderimg {
+  flex: 3;
+}
+.content .cart_content .order_conntent .order-singer .orderimg img {
+  height: 100%;
+  display: block;
+  width: 100%;
+}
+.content .cart_content .order_conntent .order-singer .order_detail {
+  margin-left: 5px;
+  flex: 6;
+}
+.content .cart_content .order_conntent .order-singer .order_detail div:nth-of-type(1) {
+  font-size: 14px;
+  color: block;
+}
+.content .cart_content .order_conntent .order-singer .order_detail .order_price {
+  font-size: 14px;
+  color: block;
+}
+.eleToggle .btn-del {
+  display: none;
+}
+.eleToggle .check {
+  display: none;
+}
+.selectAddress {
+  color: #333;
+  font-size: 14px;
+}
